@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "tool": {
+      "enum": [
+        "search_patent",
+        "fetch_patent",
+        "fetch_patent_lifecycle",
+        "get_standard_assignee_name",
+        "get_corptree_hierarchy",
+        "search_literature",
+        "fetch_literature"
+      ]
+    },
+    "input": {
+      "type": "object"
+    },
+    "saved_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "response": {}
+  },
+  "additionalProperties": false,
+  "required": [
+    "tool",
+    "input",
+    "saved_at",
+    "response"
+  ]
+}

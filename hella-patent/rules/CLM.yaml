@@ -1,0 +1,17 @@
+prefix: CLM-
+rules:
+  - id: CLM-001
+    title: 权利要求结构
+    level: must
+    source: 专利审查指南
+    check: 编号、引用、过渡语和引用基础应正确。
+  - id: CLM-002
+    title: 说明书支撑
+    level: must
+    source: 专利审查指南
+    check: 每个权利要求特征须在说明书中有明确支撑。
+  - id: CLM-003
+    title: 删除测试
+    level: must
+    source: 海拉流程
+    check: 独立权利要求只保留解决技术问题所必需的特征。

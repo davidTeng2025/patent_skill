@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "rule_id": {
+        "type": "string"
+      },
+      "level": {
+        "enum": [
+          "must",
+          "should",
+          "info"
+        ]
+      },
+      "location": {
+        "type": "object"
+      },
+      "quote": {
+        "type": "string"
+      },
+      "problem": {
+        "type": "string"
+      },
+      "suggestion": {
+        "type": "string"
+      },
+      "audience": {
+        "enum": [
+          "inventor",
+          "specialist",
+          "agent_firm"
+        ]
+      },
+      "needs_human": {
+        "type": "boolean"
+      }
+    },
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "rule_id",
+      "level",
+      "location",
+      "problem",
+      "suggestion",
+      "audience",
+      "needs_human"
+    ]
+  }
+}

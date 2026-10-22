@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "patents.json",
+  "type": "array",
+  "items": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "pub_no": {
+        "type": "string"
+      },
+      "app_no": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "family_id": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "title": {
+        "type": "string"
+      },
+      "applicants": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "patent_type": {
+        "enum": [
+          "invention",
+          "utility_model",
+          "design",
+          "unknown"
+        ]
+      },
+      "kind_code": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "patsnap_id": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "jurisdiction": {
+        "type": "string"
+      },
+      "app_date": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "date"
+      },
+      "pub_date": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "date"
+      },
+      "grant_date": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "date"
+      },
+      "est_expiry": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "date"
+      },
+      "legal_status": {
+        "enum": [
+          "active",
+          "pending",
+          "lapsed",
+          "expired"
+        ]
+      },
+      "legal_status_raw": {},
+      "ipc": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "cpc": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "standardized_assignees": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "claims_available": {
+        "type": "boolean"
+      },
+      "claims_lang": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "source": {
+        "enum": [
+          "patsnap_mcp",
+          "orbit_export",
+          "pdf"
+        ]
+      },
+      "found_by": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "fetched_at": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "relevance_rank": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "minimum": 1
+      },
+      "vendor_summary": {
+        "type": "object"
+      },
+      "lifecycle": {
+        "type": "object"
+      },
+      "grade": {
+        "enum": [
+          "S",
+          "A",
+          "B",
+          "C",
+          null
+        ]
+      },
+      "grade_reason": {
+        "type": "string"
+      },
+      "family_members": {
+        "type": "array"
+      },
+      "conflicts": {
+        "type": "array"
+      }
+    },
+    "additionalProperties": false,
+    "required": [
+      "pub_no",
+      "title",
+      "applicants",
+      "patent_type",
+      "jurisdiction",
+      "legal_status",
+      "source",
+      "found_by",
+      "fetched_at"
+    ]
+  }
+}

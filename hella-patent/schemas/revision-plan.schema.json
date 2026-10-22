@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "base_doc": {
+      "type": "string"
+    },
+    "findings_ref": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "finding_id": {
+            "type": "string"
+          },
+          "location": {
+            "type": "object"
+          },
+          "action": {
+            "enum": [
+              "replace",
+              "insert",
+              "delete"
+            ]
+          },
+          "before": {
+            "type": "string"
+          },
+          "after": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "rule_id": {
+            "type": "string"
+          },
+          "basis_src": {
+            "type": "string",
+            "minLength": 1
+          },
+          "selected": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "finding_id",
+          "location",
+          "action",
+          "before",
+          "after",
+          "reason",
+          "rule_id",
+          "basis_src",
+          "selected"
+        ]
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "base_doc",
+    "findings_ref",
+    "items"
+  ]
+}

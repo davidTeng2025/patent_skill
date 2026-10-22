@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "query_id": {
+      "type": "string"
+    },
+    "db": {
+      "enum": [
+        "patsnap",
+        "orbit",
+        "pdf"
+      ]
+    },
+    "tool": {
+      "type": "string"
+    },
+    "strategy": {
+      "type": "string"
+    },
+    "query_string": {
+      "type": "string"
+    },
+    "collapse_family": {
+      "type": "boolean"
+    },
+    "executed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "total_hits": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "fetched": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "raw_file": {
+      "type": "string"
+    },
+    "calls": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "operator": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "query_id",
+    "db",
+    "tool",
+    "executed_at",
+    "raw_file",
+    "calls"
+  ]
+}

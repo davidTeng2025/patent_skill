@@ -1,0 +1,208 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "pattern": "^(IDF|FTO|CLM|OA|DSC|APP|REV)-[0-9]{4}-[0-9]{4}$"
+    },
+    "workflow": {
+      "enum": [
+        "idf_review",
+        "fto",
+        "claim_scope",
+        "office_action",
+        "idf_drafting",
+        "application_drafting",
+        "draft_revision"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "owner": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "confidentiality": {
+      "enum": [
+        "confidential",
+        "internal",
+        "public"
+      ]
+    },
+    "status": {
+      "enum": [
+        "intake",
+        "query_confirm",
+        "searching",
+        "screening",
+        "s_confirm",
+        "comparing",
+        "drafting",
+        "self_review",
+        "review",
+        "signed",
+        "closed"
+      ]
+    },
+    "params": {
+      "type": "object"
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "idf",
+              "product_doc",
+              "drawing",
+              "control_logic",
+              "claims",
+              "spec",
+              "oa_notice",
+              "prior_art",
+              "orbit_export",
+              "design_doc",
+              "slides",
+              "source_code",
+              "meeting_notes",
+              "test_report",
+              "idf_draft",
+              "agent_draft",
+              "other"
+            ]
+          },
+          "sha256": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true,
+        "required": [
+          "path",
+          "kind"
+        ]
+      }
+    },
+    "gates": {
+      "type": "array",
+      "items": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "gate": {
+            "enum": [
+              "query_confirmed",
+              "s_list_confirmed",
+              "judgement_confirmed",
+              "points_confirmed",
+              "disclosure_confirmed",
+              "claim_plan_confirmed",
+              "revision_scope_confirmed",
+              "signed"
+            ]
+          },
+          "by": {
+            "type": "string"
+          },
+          "at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "gate",
+          "by",
+          "at"
+        ]
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "signed": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "kind",
+          "signed"
+        ]
+      }
+    },
+    "rounds": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "round": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3
+          },
+          "draft_dir": {
+            "type": "string"
+          },
+          "must_open": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "should_open": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "ended_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "round",
+          "draft_dir"
+        ]
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "case_id",
+    "workflow",
+    "title",
+    "owner",
+    "created_at",
+    "confidentiality",
+    "status",
+    "params",
+    "inputs",
+    "gates",
+    "outputs"
+  ]
+}

@@ -1,0 +1,12 @@
+prefix: OA-
+rules:
+  - id: OA-001
+    title: 对比文件全文
+    level: must
+    source: 海拉流程
+    check: 取不到全文时停止，不根据通知书摘要推断。
+  - id: OA-002
+    title: 不超范围
+    level: must
+    source: 专利审查指南
+    check: 修改只能取自原说明书和权利要求并标原文位置。

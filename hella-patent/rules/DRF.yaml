@@ -1,0 +1,12 @@
+prefix: DRF-
+rules:
+  - id: DRF-001
+    title: 事实围栏
+    level: must
+    source: 海拉流程
+    check: 生成技术内容必须带来源，不得编造。
+  - id: DRF-002
+    title: 三轮上限
+    level: must
+    source: 工程约定
+    check: 生成、自审、修正最多三轮，残留问题进入 issues。

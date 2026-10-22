@@ -1,0 +1,47 @@
+prefix: IDF-
+rules:
+  - id: IDF-001
+    title: 章节完整
+    level: must
+    source: 海拉流程
+    check: 应包含背景技术、技术问题、技术方案、有益效果、附图和术语说明。
+  - id: IDF-002
+    title: 问题方案对应
+    level: must
+    source: 专员审核标准
+    check: 技术方案必须具体说明如何解决技术问题，不能只写“A控制B”。
+  - id: IDF-003
+    title: 方案闭环
+    level: must
+    source: 上游 disclosure_self_check 改写
+    check: 输入、处理、输出和异常分支形成闭环；模块与步骤一一对应。
+  - id: IDF-004
+    title: 替代方案
+    level: should
+    source: 专员审核标准
+    check: 至少披露可进入从属权利要求的替代方案或优选方式。
+  - id: IDF-005
+    title: 实施例
+    level: should
+    source: 专员审核标准
+    check: 建议有2至3个实施例，覆盖主路径和至少一个分支。
+  - id: IDF-006
+    title: 术语与公式
+    level: must
+    source: 上游 disclosure_self_check 改写
+    check: 术语全文一致；缩写有解释；公式符号先定义且量纲自洽。
+  - id: IDF-007
+    title: 软件技术性
+    level: must
+    source: HP-海拉政策
+    check: 软件算法应写执行步骤、硬件主体、数据来源和作用对象。
+  - id: IDF-008
+    title: 图纸与联合开发
+    level: must
+    source: HP-海拉政策
+    check: 不得使用客户实际设计图或第三方图纸；联合开发须标明。
+  - id: IDF-009
+    title: 事实可追溯
+    level: must
+    source: DRF-事实围栏
+    check: 每个技术句须有材料出处；缺失时标待确认，不得推断补写。

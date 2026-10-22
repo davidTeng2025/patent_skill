@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "patent_type": {
+      "enum": [
+        "invention",
+        "utility_model"
+      ]
+    },
+    "disclosure": {
+      "type": "string"
+    },
+    "problem": {
+      "type": "string"
+    },
+    "means": {
+      "type": "string"
+    },
+    "effect": {
+      "type": "string"
+    },
+    "d1_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "principal_claim": {
+      "type": "string"
+    },
+    "claim_tree": {
+      "type": "object"
+    },
+    "deletion_test": {
+      "type": "array"
+    },
+    "fallback": {
+      "type": "array"
+    },
+    "open_questions": {
+      "type": "array"
+    },
+    "suggested_abstract_figure": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "confirmed"
+      ]
+    },
+    "confirmed_by": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "patent_type",
+    "disclosure",
+    "problem",
+    "means",
+    "effect",
+    "principal_claim",
+    "claim_tree",
+    "status"
+  ]
+}

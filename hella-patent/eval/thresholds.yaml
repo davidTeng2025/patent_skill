@@ -1,0 +1,15 @@
+version: 1
+status: pending_specialist_confirmation
+hard_gates:
+  s_grade_misses: 0
+  untraced_sentences: 0
+  fabricated_facts: 0
+metrics:
+  w1_issue_recall: null
+  w1_invalid_findings_per_case: null
+  w3_issue_recall: null
+  w3_invalid_findings_per_case: null
+  w4_adoption_rate: null
+  w5_patent_point_recall: null
+  w6_independent_feature_agreement: null
+  w7_revision_agreement: null

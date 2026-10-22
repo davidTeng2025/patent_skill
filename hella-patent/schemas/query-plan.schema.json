@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "case_id": {
+      "type": "string"
+    },
+    "elements": {
+      "type": "array",
+      "items": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "zh": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "en": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "ipc": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "zh",
+          "en",
+          "ipc"
+        ]
+      }
+    },
+    "queries": {
+      "type": "array",
+      "items": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "logic": {
+            "type": "string"
+          },
+          "patsnap": {
+            "type": "string"
+          },
+          "orbit": {
+            "type": "string"
+          },
+          "region": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "pub_date_before": {
+            "type": "string",
+            "format": "date"
+          },
+          "mode": {
+            "enum": [
+              "boolean",
+              "keyword",
+              "semantic"
+            ]
+          },
+          "semantic_query": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "collapse_family": {
+            "type": "boolean"
+          },
+          "hit_cap": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000
+          },
+          "status": {
+            "enum": [
+              "draft",
+              "confirmed",
+              "executed"
+            ]
+          },
+          "confirmed_by": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "logic",
+          "patsnap",
+          "region",
+          "pub_date_before",
+          "mode",
+          "status"
+        ]
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "case_id",
+    "elements",
+    "queries"
+  ]
+}
